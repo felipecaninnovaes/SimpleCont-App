@@ -6,29 +6,30 @@
 
 #[tauri::command]
 fn irpj(receita: f32, retencao: f32) -> String {
-    let irpj: f32 = (receita * 0.32 * 0.15) - retencao;
-    let result: String= irpj.to_string();
-    return result
+
+    let irpj: f32 = (receita * 0.32) * (0.15) - retencao;
+    let _result: String= (format!("{:.2}", irpj)).to_string();
+    return _result
 }
 
 #[tauri::command]
 fn csll(receita: f32, retencao: f32) -> String  {
-    let csll: f32 = (receita * 0.32 * 0.09) - retencao;
-    let result: String= csll.to_string();
+    let csll: f32 = (receita * 0.32) * (0.09) - retencao;
+    let result: String= (format!("{:.2}", csll)).to_string();
     return result
 }
 
 #[tauri::command]
 fn pis(receita: f32, retencao: f32) ->  String {
     let pis: f32 = (receita * 0.0065) - retencao;
-    let result: String = pis.to_string();
+    let result: String = (format!("{:.2}", pis)).to_string();
     return result
 }
 
 #[tauri::command]
 fn cofins(receita: f32, retencao: f32)  -> String {
     let cofins: f32 = (receita * 0.03) - retencao;
-    let result: String = cofins.to_string();
+    let result: String = (format!("{:.2}", cofins)).to_string();
     return result
 }
 
