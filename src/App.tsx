@@ -23,11 +23,12 @@ function App() {
 
   async function calcF() {
     // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-    const receita_int = parseInt(receita_)
-    const retencao_csll_int = parseInt(retencao_csll)
-    const retencao_irpj_int = parseInt(retencao_irpj)
-    const retencao_pis_int = parseInt(retencao_pis)
-    const retencao_cofins_int = parseInt(retencao_cofins)
+    const receita_int = parseFloat(receita_)
+  //  const retencao_csll_int = parseFloat(retencao_csll)
+    const retencao_csll_int = parseFloat(retencao_csll)
+    const retencao_irpj_int = parseFloat(retencao_irpj)
+    const retencao_pis_int = parseFloat(retencao_pis)
+    const retencao_cofins_int = parseFloat(retencao_cofins)
     setirpjResult(await invoke("irpj", { receita: receita_int, retencao: retencao_irpj_int }));
     setcsllResult(await invoke("csll", { receita: receita_int, retencao: retencao_csll_int }));
     setpisResult(await invoke("pis", { receita: receita_int, retencao: retencao_pis_int }));
