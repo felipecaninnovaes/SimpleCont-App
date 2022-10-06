@@ -42,28 +42,28 @@ function App() {
       <div className="row">
         <div>
           <input
-            id="greet-input"
+            id="base-input"
             onChange={(e) => setReceita(e.currentTarget.value)}
             placeholder="Insira a receita..."
           />
             <input
-              id="greet-input"
+              id="base-input"
               onChange={(e) => setRetencao_irpj(e.currentTarget.value)}
               placeholder="Insira o IRPJ..."
             />
             <input
-              id="greet-input"
+              id="base-input"
               onChange={(e) => setRetencao_csll(e.currentTarget.value)}
               placeholder="Insira a CSLL..."
             />
             <input
-              id="greet-input"
+              id="base-input"
               onChange={(e) => setRetencao_pis(e.currentTarget.value)}
               placeholder="Insira o PIS..."
             />
             <br></br>
             <input
-              id="greet-input"
+              id="base-input"
               onChange={(e) => setRetencao_cofins(e.currentTarget.value)}
               placeholder="Insira o COFINS..."
             />
@@ -73,13 +73,13 @@ function App() {
         </div>
       </div>
       <p>
-        <span>IRPj: R$ {irpjResult}</span>
+        <span>IRPJ: R$ {irpjResult}</span>
         <br></br>
         <span>CSLL: R$ {csllResult}</span>
         <br></br>
-        <span>IRPj: R$ {pisResult}</span>
+        <span>PIS: R$ {pisResult}</span>
         <br></br>
-        <span>IRPj: R$ {cofinsResult}</span>
+        <span>COFINS: R$ {cofinsResult}</span>
       </p>
     </div>
   );
