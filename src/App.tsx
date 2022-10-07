@@ -1,5 +1,4 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/tauri";
 import "./App.css";
 
@@ -8,23 +7,15 @@ function App() {
   const [csllResult, setcsllResult] = useState("");
   const [pisResult, setpisResult] = useState("");
   const [cofinsResult, setcofinsResult] = useState("");
-  // const [name, setName] = useState("");
   const [receita_, setReceita] = useState("");
   const [retencao_irpj, setRetencao_irpj] = useState("");
   const [retencao_csll, setRetencao_csll] = useState("");
   const [retencao_pis, setRetencao_pis] = useState("");
   const [retencao_cofins, setRetencao_cofins] = useState("");
-  
-  // async function greet() {
-  //   // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-  //   setcsllResult(await invoke("greet", { name }));
-  // }
 
 
   async function calcF() {
-    // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
     const receita_int = parseFloat(receita_)
-  //  const retencao_csll_int = parseFloat(retencao_csll)
     const retencao_csll_int = parseFloat(retencao_csll)
     const retencao_irpj_int = parseFloat(retencao_irpj)
     const retencao_pis_int = parseFloat(retencao_pis)
