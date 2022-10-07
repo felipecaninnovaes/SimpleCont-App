@@ -1,41 +1,40 @@
+
 #![cfg_attr(
     all(not(debug_assertions), target_os = "windows"),
     windows_subsystem = "windows"
 )]
 
+mod imposto;
 
 #[tauri::command]
-fn irpj(receita: f32, retencao: f32) -> String {
-
-    let irpj: f32 = (receita * 0.32) * (0.15) - retencao;
-    let _result: String= (format!("{:.2}", irpj)).to_string();
-    return _result
+fn irpj_fun(receita: f32, retencao: f32) -> String {
+    let _result: String = (imposto::basic::irpj(receita, retencao)).to_string();
+    return _result;
 }
 
 #[tauri::command]
-fn csll(receita: f32, retencao: f32) -> String  {
-    let csll: f32 = (receita * 0.32) * (0.09) - retencao;
-    let result: String= (format!("{:.2}", csll)).to_string();
-    return result
+fn csll_fun(receita: f32, retencao: f32) -> String {
+    let _result: String = (imposto::basic::csll(receita, retencao)).to_string();
+    return _result;
 }
 
 #[tauri::command]
-fn pis(receita: f32, retencao: f32) ->  String {
-    let pis: f32 = (receita * 0.0065) - retencao;
-    let result: String = (format!("{:.2}", pis)).to_string();
-    return result
+fn pis_fun(receita: f32, retencao: f32) -> String {
+    let _result: String = (imposto::basic::pis(receita, retencao)).to_string();
+    return _result;
 }
 
+
 #[tauri::command]
-fn cofins(receita: f32, retencao: f32)  -> String {
-    let cofins: f32 = (receita * 0.03) - retencao;
-    let result: String = (format!("{:.2}", cofins)).to_string();
-    return result
+fn cofins_fun(receita: f32, retencao: f32) -> String {
+    let _result: String = (imposto::basic::cofins(receita, retencao)).to_string();
+    return _result;
 }
+
 
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![irpj, csll, pis, cofins])
+        .invoke_handler(tauri::generate_handler![irpj_fun, csll_fun, pis_fun, cofins_fun])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

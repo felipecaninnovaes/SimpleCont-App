@@ -29,10 +29,10 @@ function App() {
     const retencao_irpj_int = parseFloat(retencao_irpj)
     const retencao_pis_int = parseFloat(retencao_pis)
     const retencao_cofins_int = parseFloat(retencao_cofins)
-    setirpjResult(await invoke("irpj", { receita: receita_int, retencao: retencao_irpj_int }));
-    setcsllResult(await invoke("csll", { receita: receita_int, retencao: retencao_csll_int }));
-    setpisResult(await invoke("pis", { receita: receita_int, retencao: retencao_pis_int }));
-    setcofinsResult(await invoke("cofins", { receita: receita_int, retencao: retencao_cofins_int }));
+    setirpjResult(await invoke("irpj_fun", { receita: receita_int, retencao: retencao_irpj_int }));
+    setcsllResult(await invoke("csll_fun", { receita: receita_int, retencao: retencao_csll_int }));
+    setpisResult(await invoke("pis_fun", { receita: receita_int, retencao: retencao_pis_int }));
+    setcofinsResult(await invoke("cofins_fun", { receita: receita_int, retencao: retencao_cofins_int }));
   }
 
   return (
