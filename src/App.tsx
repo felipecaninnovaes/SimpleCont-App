@@ -16,14 +16,33 @@ function App() {
 
   async function calcF() {
     const receita_int = parseFloat(receita_)
-    const retencao_csll_int = parseFloat(retencao_csll)
-    const retencao_irpj_int = parseFloat(retencao_irpj)
-    const retencao_pis_int = parseFloat(retencao_pis)
-    const retencao_cofins_int = parseFloat(retencao_cofins)
-    setirpjResult(await invoke("irpj_fun", { receita: receita_int, retencao: retencao_irpj_int }));
-    setcsllResult(await invoke("csll_fun", { receita: receita_int, retencao: retencao_csll_int }));
-    setpisResult(await invoke("pis_fun", { receita: receita_int, retencao: retencao_pis_int }));
-    setcofinsResult(await invoke("cofins_fun", { receita: receita_int, retencao: retencao_cofins_int }));
+    if (retencao_irpj !== "") {
+      const retencao_irpj_int = parseFloat(retencao_irpj)
+      setirpjResult(await invoke("irpj_fun", { receita: receita_int, retencao: retencao_irpj_int }));
+    } else {
+      setirpjResult(await invoke("irpj_fun", { receita: receita_int, retencao: 0.0 }));
+    }
+
+    if (retencao_csll !== "") {
+      const retencao_csll_int = parseFloat(retencao_csll)
+      setcsllResult(await invoke("csll_fun", { receita: receita_int, retencao: retencao_csll_int }));
+    } else {
+      setcsllResult(await invoke("csll_fun", { receita: receita_int, retencao: 0.0 }));
+    }
+
+    if (retencao_pis !== "") {
+      const retencao_pis_int = parseFloat(retencao_pis)
+      setpisResult(await invoke("pis_fun", { receita: receita_int, retencao: retencao_pis_int }));
+    } else {
+      setpisResult(await invoke("pis_fun", { receita: receita_int, retencao: 0.0 }));
+    }
+
+    if (retencao_cofins !== "") {
+      const retencao_cofins_int = parseFloat(retencao_cofins)
+      setcofinsResult(await invoke("cofins_fun", { receita: receita_int, retencao: retencao_cofins_int }));
+    } else {
+      setcofinsResult(await invoke("cofins_fun", { receita: receita_int, retencao: 0.0 }));
+    }
   }
 
   return (
@@ -38,27 +57,27 @@ function App() {
             onChange={(e) => setReceita(e.currentTarget.value)}
             placeholder="Insira a receita..."
           />
-            <input
-              id="base-input"
-              onChange={(e) => setRetencao_irpj(e.currentTarget.value)}
-              placeholder="Insira o IRPJ..."
-            />
-            <input
-              id="base-input"
-              onChange={(e) => setRetencao_csll(e.currentTarget.value)}
-              placeholder="Insira a CSLL..."
-            />
-            <input
-              id="base-input"
-              onChange={(e) => setRetencao_pis(e.currentTarget.value)}
-              placeholder="Insira o PIS..."
-            />
-            <br></br>
-            <input
-              id="base-input"
-              onChange={(e) => setRetencao_cofins(e.currentTarget.value)}
-              placeholder="Insira o COFINS..."
-            />
+          <input
+            id="base-input"
+            onChange={(e) => setRetencao_irpj(e.currentTarget.value)}
+            placeholder="Insira o retido do IRPJ..."
+          />
+          <input
+            id="base-input"
+            onChange={(e) => setRetencao_csll(e.currentTarget.value)}
+            placeholder="Insira o retido da CSLL..."
+          />
+          <input
+            id="base-input"
+            onChange={(e) => setRetencao_pis(e.currentTarget.value)}
+            placeholder="Insira o retido do PIS..."
+          />
+          <br></br>
+          <input
+            id="base-input"
+            onChange={(e) => setRetencao_cofins(e.currentTarget.value)}
+            placeholder="Insira o retido do COFINS..."
+          />
           <button type="button" onClick={() => calcF()}>
             Calcular
           </button>

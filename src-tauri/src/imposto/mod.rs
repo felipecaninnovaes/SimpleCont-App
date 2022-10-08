@@ -2,7 +2,6 @@
 
 pub mod basic {
     pub fn irpj(receita: f32, retencao: f32) -> String {
-
         let irpj: f32 = (receita * 0.32) * (0.15) - retencao;
         let _result: String= (format!("{:.2}", irpj)).to_string();
         return _result
