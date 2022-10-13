@@ -2,6 +2,7 @@
 name = "simplecont-app"
 version = "1.1.0"
 description = "Accounting software"
+
 authors = ["felipecaninnovaes"]
 license = ""
 repository = ""
