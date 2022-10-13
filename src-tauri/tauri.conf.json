@@ -7,7 +7,7 @@
   },
   "package": {
     "productName": "simplecont-app",
-    "version": "0.0.0"
+    "version": "1.0.0"
   },
   "tauri": {
     "allowlist": {
@@ -28,7 +28,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.felipecn.sct",
+      "identifier": "com.felipecaninnovaes.sct",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
