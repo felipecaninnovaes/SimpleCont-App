@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { invoke } from "@tauri-apps/api/tauri";
 
-import "../styles/pagesBase.css";
-
 export function CalculoPresumido() {
   const [irpjResult, setirpjResult] = useState("");
   const [csllResult, setcsllResult] = useState("");
@@ -46,53 +44,48 @@ export function CalculoPresumido() {
   }
 
   return (
-    <div className="container">
-      <div className="app">
-        <div className="itens">
+    <div className="h-screen w-screen flex justify-center items-center bg-SC_background">
+      <div className="bg-SC_background2 flex absolute rounded-lg shadow-2xl flex-row justify-center items-center">
+        <div className="itens p-10">
           <div className="row">
             <div>
-              <div className="Lines">
-                <a>Receita da Empresa</a>
-                <input
-                  id="base-input"
+              <div className="">
+                <a className="font-bold">Receita da Empresa</a>
+                <input className="rounded-md w-full border-solid p-2 shadow-gray-400 shadow-md bg-SC_input placeholder:text-gray-500"
                   onChange={(e) => setReceita(e.currentTarget.value)}
                   placeholder="Insira a receita..."
                 />
               </div>
               <div className="Lines">
-                <a>Receita do IRPJ</a>
-                <input
-                  id="base-input"
+                <a className="font-bold">Receita do IRPJ</a>
+                <input className="rounded-md w-full border-solid p-2 shadow-gray-400 shadow-md bg-SC_input placeholder:text-gray-500"
                   onChange={(e) => setRetencao_irpj(e.currentTarget.value)}
                   placeholder="Insira o retido do IRPJ..."
                 />
               </div>
               <div className="Lines">
-                <a>Receita da Empresa</a>
-                <input
-                  id="base-input"
+                <a className="font-bold">Receita da Empresa</a>
+                <input className="rounded-md w-full border-solid p-2 shadow-gray-400 shadow-md bg-SC_input placeholder:text-gray-500"
                   onChange={(e) => setRetencao_csll(e.currentTarget.value)}
                   placeholder="Insira o retido da CSLL..."
                 />
               </div>
               <div className="Lines">
-                <a>Receita da Empresa</a>
-                <input
-                  id="base-input"
+                <a className="font-bold">Receita da Empresa</a>
+                <input className="rounded-md w-full border-solid p-2 shadow-gray-400 shadow-md bg-SC_input placeholder:text-gray-500"
                   onChange={(e) => setRetencao_pis(e.currentTarget.value)}
                   placeholder="Insira o retido do PIS..."
                 />
               </div>
               <div className="Lines">
-                <a>Receita da Empresa</a>
-                <input
-                  id="base-input"
+                <a className="font-bold">Receita da Empresa</a>
+                <input className="rounded-md w-full border-solid p-2 shadow-gray-400 shadow-md bg-SC_input placeholder:text-gray-500"
                   onChange={(e) => setRetencao_cofins(e.currentTarget.value)}
                   placeholder="Insira o retido do COFINS..."
                 />
               </div>
-              <div className="buttons">
-                <button className="cal" type="button" onClick={() => calcF()}>
+              <div>
+                <button className="rounded-md w-full border-solid p-2 mt-4 mb-4 shadow-gray-400 shadow-md bg-SC_button text-white text-md font-bold hover:bg-SC_button_hover transition-colors" type="button" onClick={() => calcF()}>
                   Calcular
                 </button>
               </div>
