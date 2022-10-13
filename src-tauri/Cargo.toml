@@ -1,7 +1,8 @@
 [package]
 name = "simplecont-app"
-version = "1.0.0"
-description = "A Tauri App"
+version = "1.1.0"
+description = "Accounting software"
+
 authors = ["felipecaninnovaes"]
 license = ""
 repository = ""
