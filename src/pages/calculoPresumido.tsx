@@ -64,21 +64,21 @@ export function CalculoPresumido() {
                 />
               </div>
               <div className="Lines">
-                <a className="font-bold">Receita da Empresa</a>
+                <a className="font-bold">Receita da CSLL</a>
                 <input className="rounded-md w-full border-solid p-2 shadow-gray-400 shadow-md bg-SC_input placeholder:text-gray-500"
                   onChange={(e) => setRetencao_csll(e.currentTarget.value)}
                   placeholder="Insira o retido da CSLL..."
                 />
               </div>
               <div className="Lines">
-                <a className="font-bold">Receita da Empresa</a>
+                <a className="font-bold">Receita do PIS</a>
                 <input className="rounded-md w-full border-solid p-2 shadow-gray-400 shadow-md bg-SC_input placeholder:text-gray-500"
                   onChange={(e) => setRetencao_pis(e.currentTarget.value)}
                   placeholder="Insira o retido do PIS..."
                 />
               </div>
               <div className="Lines">
-                <a className="font-bold">Receita da Empresa</a>
+                <a className="font-bold">Receita do COFINS</a>
                 <input className="rounded-md w-full border-solid p-2 shadow-gray-400 shadow-md bg-SC_input placeholder:text-gray-500"
                   onChange={(e) => setRetencao_cofins(e.currentTarget.value)}
                   placeholder="Insira o retido do COFINS..."
@@ -92,13 +92,13 @@ export function CalculoPresumido() {
             </div>
           </div>
           <p>
-            <span>IRPJ: R$ {irpjResult}</span>
-            <br></br>
-            <span>CSLL: R$ {csllResult}</span>
-            <br></br>
-            <span>PIS: R$ {pisResult}</span>
-            <br></br>
-            <span>COFINS: R$ {cofinsResult}</span>
+            <p>Imposto do IRPJ: <span className="font-bold">R$ {irpjResult}</span></p>
+            
+            <p>Imposto da CSLL: <span className="font-bold">R$ {csllResult}</span></p>
+            
+            <p>Imposto do PIS: <span className="font-bold">R$ {pisResult}</span></p>
+            
+            <p>Imposto do COFINS: <span className="font-bold">R$ {cofinsResult}</span></p>
           </p>
         </div>
       </div>
